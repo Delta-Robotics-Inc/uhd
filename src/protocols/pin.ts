@@ -36,8 +36,10 @@ export interface PinCapabilities {
 
 export interface PinConfig {
   id: string;
-  /** Human label, e.g. "GPIO21 (QFN pin 42)". */
+  /** Human label, e.g. "GPIO21". */
   name?: string;
+  /** Physical package pin/pad designator (e.g. 42 or "A7"). */
+  pin?: number | string;
   /** Logic-level voltage: a nominal value or [min, max] range. */
   voltageV?: number | [number, number];
   /** Max continuous source/sink current in mA. */
@@ -103,6 +105,7 @@ export function Pin(config: PinConfig): InterfaceDef {
   return {
     id: config.id,
     name: config.name,
+    ...(config.pin !== undefined ? { pin: config.pin } : {}),
     domain: "electrical",
     exposed: config.exposed ?? true,
     default_active: config.defaultActive ?? true,

@@ -8,6 +8,7 @@
  * (matching/roles.ts) and slot binding (binding/) understand.
  */
 export * from "./params.js";
+export * from "./signal.js";
 export * from "./pin.js";
 export * from "./gpio.js";
 export * from "./power.js";

@@ -47,6 +47,13 @@ export function baudRate(value: number | [number, number]): Parameter {
     : { id: "baud_rate", unit: "Hz", value };
 }
 
+/** Maximum signal frequency a pin supports, in Hz — fixed or [min, max]. */
+export function maxFrequencyHz(value: number | [number, number]): Parameter {
+  return Array.isArray(value)
+    ? { id: "max_frequency", unit: "Hz", range: value }
+    : { id: "max_frequency", unit: "Hz", value };
+}
+
 /** Converter resolution in bits (ADC/DAC/PWM). */
 export function resolutionBits(value: number): Parameter {
   return { id: "resolution", unit: "dimensionless", value };

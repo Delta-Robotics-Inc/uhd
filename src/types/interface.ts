@@ -40,6 +40,9 @@ export interface InterfaceDef {
   domain: DomainKind;
   exposed: boolean;
 
+  /** Physical package pin/pad designator (e.g. 42 or "A7"), for leaf pin interfaces */
+  pin?: number | string;
+
   /** What this interface speaks — used for ALL inter-module matching */
   protocols: ProtocolDef[];
 

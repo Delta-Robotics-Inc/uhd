@@ -9,6 +9,8 @@ import { voltageV, voltageRangeV, maxCurrentA } from "./params.js";
 export interface PowerConfig {
   id: string;
   name?: string;
+  /** Physical package pin/pad designator, when the rail maps to a single pin. */
+  pin?: number | string;
   /** Nominal voltage or [min, max] acceptable range. */
   voltageV: number | [number, number];
   /** Nominal value when voltageV is a range. */
@@ -30,6 +32,7 @@ function power(config: PowerConfig, role: "input" | "output"): InterfaceDef {
   return {
     id: config.id,
     name: config.name,
+    ...(config.pin !== undefined ? { pin: config.pin } : {}),
     domain: "electrical",
     exposed: config.exposed ?? true,
     default_active: config.defaultActive ?? true,
@@ -51,6 +54,8 @@ export function PowerOut(config: PowerConfig): InterfaceDef {
 export interface GroundConfig {
   id?: string;
   name?: string;
+  /** Physical package pin/pad designator, when ground maps to a single pin. */
+  pin?: number | string;
   /** Max cumulative return current in amps, if the datasheet specifies one. */
   maxCurrentA?: number;
 }
@@ -60,6 +65,7 @@ export function Ground(config: GroundConfig = {}): InterfaceDef {
   return {
     id: config.id ?? "gnd",
     name: config.name ?? "Ground",
+    ...(config.pin !== undefined ? { pin: config.pin } : {}),
     domain: "electrical",
     exposed: true,
     default_active: true,
