@@ -5,6 +5,16 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./drc": {
+      "types": "./dist/drc/index.d.ts",
+      "import": "./dist/drc/index.js"
+    }
+  },
   "files": [
     "dist",
     "src",

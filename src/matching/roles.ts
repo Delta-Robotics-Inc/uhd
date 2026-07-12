@@ -56,6 +56,7 @@ const PROTOCOL_ROLE_PAIRS: Record<string, Record<string, string[]>> = {
   power: {
     input: ["output"],
     output: ["input"],
+    ground: ["ground"],
   },
   motor_control: {
     controller: ["target"],
