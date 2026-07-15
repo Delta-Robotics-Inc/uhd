@@ -27,6 +27,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "build:library": "tsx scripts/build-library.ts",
+    "prepack": "npm run build && npm run build:library",
     "test": "vitest run",
     "test:watch": "vitest",
     "type-check": "tsc --noEmit"

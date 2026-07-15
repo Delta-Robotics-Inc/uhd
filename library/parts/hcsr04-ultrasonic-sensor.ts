@@ -260,7 +260,7 @@ const ultrasonicSensor: InterfaceDef = {
 // ---------------------------------------------------------------------------
 
 export const HCSR04_ULTRASONIC_SENSOR: ModuleDef = defineModule({
-  id: "HCSR04-Ultrasonic-Sensor",
+  id: "hcsr04-ultrasonic-sensor",
   name: "HC-SR04 Ultrasonic Sonar Distance Sensor + 2 x 10K resistors",
   version: "1.0.0", // audited definition; ProtoPart source version 0.1.0
   manufacturer: "Adafruit",
