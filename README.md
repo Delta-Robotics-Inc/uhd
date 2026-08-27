@@ -32,7 +32,7 @@ Three production imperatives shape every design decision in UHD:
 
 ## Try out UHD
 
-To aes what UHD can enable, check out the Protoboard project, built on UHD:
+To see what UHD can enable, check out the Protoboard project, built on UHD:
 https://protoboard.ai/validate
 
 ---
