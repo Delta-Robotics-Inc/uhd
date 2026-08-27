@@ -30,6 +30,13 @@ Three production imperatives shape every design decision in UHD:
 
 ---
 
+## Try out UHD
+
+To aes what UHD can enable, check out the Protoboard project, built on UHD:
+https://protoboard.ai/validate
+
+---
+
 ## Core concepts
 
 UHD's data model rests on **four primitives**, deliberately kept small:
